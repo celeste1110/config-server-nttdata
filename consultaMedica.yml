@@ -1,13 +1,16 @@
-server:
-  port: 8091
 spring:
-  application:
-    name: configserver
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/celeste1110/config-server-nttdata.git
-          default-label: main
-  profiles:
-    active: git
+  jpa:
+    database: postgresql
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost/consulta_medica
+    username: postgres
+    password: 1234
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/consultaMedica
